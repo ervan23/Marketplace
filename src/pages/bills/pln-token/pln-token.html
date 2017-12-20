@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>PLN Token</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>Customer ID</ion-label>
+            <ion-input [(ngModel)]="customer_id" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Nominal</ion-label>
+            <ion-select [(ngModel)]="nominal">
+                <ion-option value="20000">20.000</ion-option>
+                <ion-option value="50000">50.000</ion-option>
+                <ion-option value="100000">100.000</ion-option>                
+                <ion-option value="200000">200.000</ion-option>
+                <ion-option value="500000">500.000</ion-option>
+                <ion-option value="1000000">1.000.000</ion-option>
+            </ion-select>
+        </ion-item>
+        <button ion-button full (click)="checkBilling()" color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Next
+        </button>
+    </ion-list>
+
+</ion-content>

@@ -1,0 +1,93 @@
+<!--
+  Generated template for the MLM page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>PDAM/PAM</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>Customer ID</ion-label>
+            <ion-input [(ngModel)]="customer_id" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Location</ion-label>
+            <ion-select [(ngModel)]="location">
+                <ion-option *ngFor="let v of listPAM" value="{{ v.kode_produk }}">{{ v.kode_produk }}</ion-option>
+                <!--<ion-option value="PDAM%20AETRA/TPJ">PDAM AETRA/TPJ</ion-option>
+                <ion-option value="PDAM%20KAB%20BANDUNG">PDAM KAB BANDUNG</ion-option>
+                <ion-option value="PDAM%20KOT%20BANDUNG">PDAM KOT BANDUNG</ion-option>
+                <ion-option value="PDAM%20KAB%20KARAWANG">PDAM KAB KARAWANG</ion-option>
+                <ion-option value="PDAM%20KOT%20DEPOK">PDAM KOT DEPOK</ion-option>
+                <ion-option value="PDAM%20KAB%20SLEMAN">PDAM KAB SLEMAN</ion-option>
+                <ion-option value="PDAM%20KAB%20BANYUMAS">PDAM KAB BANYUMAS</ion-option>
+                <ion-option value="PDAM%20KAB%20BOYOLALI">PDAM KAB BOYOLALI</ion-option>
+                <ion-option value="PDAM%20KAB%20BREBES">PDAM KAB BREBES</ion-option>
+                <ion-option value="PDAM%20KAB%20CILACAP">PDAM KAB CILACAP</ion-option>
+                <ion-option value="PDAM%20KAB%20GROBOGAN">PDAM KAB GROBOGAN</ion-option>
+                <ion-option value="PDAM%20KAB%20KARANGANYAR">PDAM KAB KARANGANYAR</ion-option>
+                <ion-option value="PDAM%20KAB%20KEBUMEN">PDAM KAB KEBUMEN</ion-option>
+                <ion-option value="PDAM%20KAB%20KENDAL">PDAM KAB KENDAL</ion-option>
+                <ion-option value="PDAM%20KAB%20KLATEN">PDAM KAB KLATEN</ion-option>
+                <ion-option value="PDAM%20KAB%20PEKALONGAN">PDAM KAB PEKALONGAN</ion-option>
+                <ion-option value="PDAM%20KAB%20PURBALINGGA">PDAM KAB PURBALINGGA</ion-option>
+                <ion-option value="PDAM%20KAB%20PURWOREJO">PDAM KAB PURWOREJO</ion-option>
+                <ion-option value="PDAM%20KAB%20REMBANG">PDAM KAB REMBANG</ion-option>
+                <ion-option value="PDAM%20KAB%20SEMARANG">PDAM KAB SEMARANG</ion-option>
+                <ion-option value="PDAM%20KAB%20SRAGEN">PDAM KAB SRAGEN</ion-option>
+                <ion-option value="PDAM%20KAB%20WONOGIRI">PDAM KAB WONOGIRI</ion-option>
+                <ion-option value="PDAM%20KAB%20WONOSOBO">PDAM KAB WONOSOBO</ion-option>
+                <ion-option value="PDAM%20KOT%20SALATIGA">PDAM KOT SALATIGA</ion-option>
+                <ion-option value="PDAM%20KOT%20SEMARANG">PDAM KOT SEMARANG</ion-option>
+                <ion-option value="PDAM%20KOT%20SURAKARTA">PDAM KOT SURAKARTA</ion-option>
+                <ion-option value="PDAM%20KAB%20BANGKALAN">PDAM KAB BANGKALAN</ion-option>
+                <ion-option value="PDAM%20KAB%20BOJONEGORO">PDAM KAB BOJONEGORO</ion-option>
+                <ion-option value="PDAM%20KAB%20BONDOWOSO">PDAM KAB BONDOWOSO</ion-option>
+                <ion-option value="PDAM%20KAB%20JEMBER">PDAM KAB JEMBER</ion-option>
+                <ion-option value="PDAM%20KAB%20MALANG">PDAM KAB MALANG</ion-option>
+                <ion-option value="PDAM%20KAB%20MOJOKERTO">PDAM KAB MOJOKERTO</ion-option>
+                <ion-option value="PDAM%20KAB%20PROBOLINGGO">PDAM KAB PROBOLINGGO</ion-option>
+                <ion-option value="PDAM%20KAB%20SIDOARJO">PDAM KAB SIDOARJO</ion-option>
+                <ion-option value="PDAM%20KAB%20SITUBONDO">PDAM KAB SITUBONDO</ion-option>
+                <ion-option value="PDAM%20KOT%20MADIUN">PDAM KOT MADIUN</ion-option>
+                <ion-option value="PDAM%20KOT%20SURABAYA">PDAM KOT SURABAYA</ion-option>
+                <ion-option value="PDAM%20LAMPUNG">PDAM LAMPUNG</ion-option>
+                <ion-option value="PDAM%20JAMBI">PDAM JAMBI</ion-option>
+                <ion-option value="PDAM%20MEDAN">PDAM MEDAN</ion-option>
+                <ion-option value="PDAM%20PALEMBANG">PDAM PALEMBANG</ion-option>
+                <ion-option value="PDAM%20KAB%20KUBU%20RAYA">PDAM KAB KUBU RAYA</ion-option>
+                <ion-option value="PDAM%20KAB%20BALANGAN">PDAM KAB BALANGAN</ion-option>
+                <ion-option value="PDAM%20KAB%20TAPIN">PDAM KAB TAPIN</ion-option>
+                <ion-option value="PDAM%20KOT%20BANJARBARU">PDAM KOT BANJARBARU</ion-option>
+                <ion-option value="PDAM%20KOT%20BANJARMASIN">PDAM KOT BANJARMASIN</ion-option>
+                <ion-option value="PDAM%20KAB%20BERAU">PDAM KAB BERAU</ion-option>
+                <ion-option value="PDAM%20KOT%20TANAH%20GROGOT">PDAM KOT TANAH GROGOT</ion-option>
+                <ion-option value="PDAM%20KOT%20MANADO">PDAM KOT MANADO</ion-option>
+                <ion-option value="PDAM%20KAB%20BULELENG">PDAM KAB BULELENG</ion-option>
+                <ion-option value="PDAM%20KOT%20DENPASAR">PDAM KOT DENPASAR</ion-option>
+                <ion-option value="PDAM%20KAB%20LOMBOK%20TENGAH">PDAM KAB LOMBOK TENGAH</ion-option>
+                <ion-option value="PDAM%20KOT%20MATARAM">PDAM KOT MATARAM</ion-option>
+                <ion-option value="PDAM%20KAB%20BOGOR">PDAM KAB BOGOR</ion-option>
+                <ion-option value="PDAM%20KOT%20BOGOR">PDAM KOT BOGOR</ion-option>
+                <ion-option value="PDAM%20KOT%20PONTIANAK">PDAM KOT PONTIANAK</ion-option>
+                <ion-option value="PDAM%20KOT%20MAKASSAR">PDAM KOT MAKASSAR</ion-option>
+                <ion-option value="PDAM%20KOT%20BALIKPAPAN">PDAM KOT BALIKPAPAN</ion-option>
+                <ion-option value="PDAM%20KOT%20BEKASI">PDAM KOT BEKASI</ion-option>-->
+            </ion-select>
+        </ion-item>
+        <button ion-button full (click)="checkBilling()" color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Next
+        </button>
+    </ion-list>
+
+</ion-content>

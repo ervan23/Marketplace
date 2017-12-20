@@ -1,0 +1,585 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Simulasi Angsuran</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <!--<ion-icon name="md-close" showWhen="windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>    
+    <ion-segment [(ngModel)]="segment_view" color="primary">
+        <ion-segment-button value="mobil">
+        Mobil
+        </ion-segment-button>
+        <ion-segment-button value="motor">
+        Motor
+        </ion-segment-button>
+        <ion-segment-button value="rumah">
+        Rumah
+        </ion-segment-button>
+    </ion-segment>
+
+    <!-- Segment in content -->
+    <ion-grid *ngIf="segment_view == 'mobil'">
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Pencairan 20.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        2.086.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        1.191.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        906.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Pencairan 50.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        4.942.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        2.768.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        2.070.000
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Pencairan 100.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        9.748.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        5.425.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        4.044.000
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Pencairan 150.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        14.914.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        8.290.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        6.160.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Pencairan 200.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        18.719.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        10.973.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        8.152.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>        
+    </ion-grid>
+
+    <ion-grid *ngIf="segment_view == 'motor'">
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Funding Sebenarnya 1.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        6 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        442.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        12 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        233.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        18 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        181.000
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Funding Sebenarnya 3.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        6 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        766.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        12 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        398.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        18 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        304.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Funding Sebenarnya 4.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        6 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        963.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        12 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        506.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        18 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        386.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Funding Sebenarnya 5.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        6 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        1.160.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        12 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        615.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        18 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        468.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Funding Sebenarnya 10.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        6 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        2.196.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        12 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        1.169.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        18 Bulan
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        885.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </ion-grid>
+    <ion-grid *ngIf="segment_view == 'rumah'">
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Multiguna 50.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        4.716.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        2.644.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        1.962.000
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Multiguna 100.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        9.432.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        5.287.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        3.923.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Multiguna 200.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        18.719.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        10.376.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        7.638.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Multiguna 500.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        46.797.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        25.939.500
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        19.095.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <h2><b>Plafond Multiguna 1.000.000.000</b></h2>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-row>
+                    <ion-col col-12 style="text-align: center;">
+                        <h3><b>Cicilan Bulanan/Tenor</b></h3>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        1 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        93.114.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        2 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        51.386.000
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        3 Tahun
+                    </ion-col>
+                    <ion-col col-6 style="float:right">
+                        37.675.500
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>        
+    </ion-grid>
+</ion-content>

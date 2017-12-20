@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Hotel Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="detailHotel" class="card-background-page">
+    <ion-card>
+        <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-saopaolo.png"/>
+        <div class="card-title">{{detailHotel.HotelName[0]}}</div>
+        <div class="card-subtitle">{{detailHotel.Telephone[0]}}</div>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Contact
+        </ion-card-header>
+        <ion-card-content>
+            <p>Address: {{detailHotel.Address1[0]}}</p>
+            <p>Email: {{detailHotel.Email[0]}}</p>
+            <p>Fax: {{detailHotel.Facsimile[0]}}</p>
+            <p>Phone: {{detailHotel.Telephone[0]}}</p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Facility
+        </ion-card-header>
+
+        <ion-list>
+
+            <button *ngFor="let f of detailHotel.Facility" ion-item>
+                <ion-icon name="add" item-left></ion-icon>
+                {{f.$.name}}
+            </button>
+
+        </ion-list>
+    </ion-card>
+
+    <button ion-button block>Book Now (${{priceRoom}})</button>
+</ion-content>

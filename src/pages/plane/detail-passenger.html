@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Passenger Detail</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <!--<ion-icon name="md-close" showWhen="windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Name as on ID card</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+            <small>(without title and punctuation)</small>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Title</ion-label>
+            <ion-select [(ngModel)]="title">
+                <ion-option *ngFor="let v of t" value="{{v}}">{{v}}.</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Date of birth</ion-label>
+            <ion-datetime min="{{dob_min}}" max="{{dob_max}}" displayFormat="MMM DD YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="dob"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Nationality</ion-label>
+            <ion-select [(ngModel)]="nationality">
+                <ion-option value="ID">Indonesia</ion-option>
+            </ion-select>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding>
+        <button ion-button (click)="done()" color="primary" block>Done</button>
+    </div>
+</ion-content>

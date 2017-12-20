@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>History Balance</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="margin-bottom: 12px;">
+      <ion-col col-12 style="text-align: center !important;">
+        Current Balance: {{balance}}
+      </ion-col>
+    </ion-row>
+    <ion-row style="background-color: #EF5350; border-bottom: 1px solid #fff; padding-top: 7px; padding-bottom: 7px;">
+      <ion-col col-4 style="text-align: center !important;">
+        Description
+      </ion-col>
+      <ion-col col-4 style="text-align: center !important;">
+        Amount
+      </ion-col>
+      <ion-col col-4 style="text-align: center !important;">
+        Date
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let v of history" style="border-bottom: 1px solid #222;">
+      <ion-col col-4 *ngIf="v.AMOUNT < 0">
+        {{v.DESCRIPTION}}
+      </ion-col>
+      <ion-col *ngIf="v.AMOUNT > 0" col-4 style="color: blue">
+        {{v.DESCRIPTION}}
+      </ion-col>
+      <ion-col *ngIf="v.AMOUNT < 0" col-4 style="text-align: center !important;">
+        Rp. {{v.AMOUNT}}
+      </ion-col>
+      <ion-col *ngIf="v.AMOUNT > 0" col-4 style="text-align: center !important; color: blue">
+        Rp. {{v.AMOUNT}}
+      </ion-col>
+      <ion-col *ngIf="v.AMOUNT < 0" col-4 style="text-align: center !important;">
+        {{v.TRANS_DATE}}
+      </ion-col>      
+      <ion-col *ngIf="v.AMOUNT > 0" col-4  style="text-align: center !important; color: blue">
+        {{v.TRANS_DATE}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

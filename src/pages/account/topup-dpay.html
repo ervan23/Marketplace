@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TopUp D-Pay</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list radio-group [(ngModel)]="nominal">
+        <ion-list-header>
+            Nominal
+        </ion-list-header>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>50.000</ion-label>
+                        <ion-radio color="primary" value="50000"></ion-radio>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>                        
+                    <ion-item>
+                        <ion-label>100.000</ion-label>
+                        <ion-radio color="primary" value="100000"></ion-radio>
+                    </ion-item>                    
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>                    
+                    <ion-item>
+                        <ion-label>200.000</ion-label>
+                        <ion-radio color="primary" value="200000"></ion-radio>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>300.000</ion-label>
+                        <ion-radio color="primary" value="300000"></ion-radio>
+                    </ion-item>                    
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>500.000</ion-label>
+                        <ion-radio color="primary" value="500000"></ion-radio>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label>1.000.000</ion-label>
+                        <ion-radio color="primary" value="1000000"></ion-radio>
+                    </ion-item>                    
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>
+    <ion-list>
+        <ion-item>
+            <ion-label>Nominal lain</ion-label>
+            <ion-input type="text" [(ngModel)]="nominal"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Bank Tujuan</ion-label>
+            <ion-select [(ngModel)]="dest_bank">
+                <ion-option value="BCA">BCA</ion-option>
+                <ion-option value="MANDIRI">MANDIRI</ion-option>
+                <ion-option value="BRI">BRI</ion-option>
+                <ion-option value="BNI">BNI</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col padding>
+                <button ion-button full color="primary" (click)="topUpDpay()" icon-left>
+                    <ion-icon name="cash"></ion-icon>
+                    Top Up
+                </button>           
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

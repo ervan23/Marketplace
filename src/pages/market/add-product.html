@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Pasang Iklan</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Nama Barang</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Kode Barang</ion-label>
+            <ion-input type="text" [(ngModel)]="kode_barang"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Provinsi</ion-label>
+             <ion-input type="text" (input)="getProvinceItem($event)" [(ngModel)]="selectedProvince"></ion-input>
+        </ion-item>
+
+        <div *ngIf="searchProvince">
+            <ion-item *ngFor="let ap of tmp_listProvince; let x = index" (click)="setProvince(ap)">
+                {{ap.name}}
+            </ion-item>
+        </div>
+
+        <!--<ion-item>
+            <ion-label floating>Kota</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>-->
+
+        <ion-item>
+            <ion-label floating>Kategori</ion-label>
+             <ion-input type="text" (input)="getCategoryItem($event)" [(ngModel)]="selectedCategory"></ion-input>
+        </ion-item>
+
+        <div *ngIf="searchCategory">
+            <ion-item *ngFor="let ap of tmp_listCategory; let x = index" (click)="setCategory(ap)">
+                {{ap.name}}
+            </ion-item>
+        </div>
+
+        <ion-item>
+            <ion-label floating>Deskripsi</ion-label>
+            <ion-textarea [(ngModel)]="description"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Harga</ion-label>
+            <ion-input type="number" [(ngModel)]="price"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button (click)="openImagePicker()" ion-button color="primary" item-right>
+                Pilih
+            </button>
+            <ion-label>
+                Tambahkan Gambar
+            </ion-label>
+            <ion-icon name='image' item-left></ion-icon>
+        </ion-item>
+
+        <ion-item *ngIf="images.length > 0">
+            <ion-row>
+                <ion-slides pager="true" loop="true">
+                    <ion-slide *ngFor="let v of images">
+                        <img src="{{v}}"  alt="dxplor" class="content-responsive" />
+                    </ion-slide>
+                </ion-slides>
+            </ion-row>
+        </ion-item>
+
+        <div  *ngIf="images_edit.length > 0">
+            <ion-item *ngFor="let v of images_edit; let i = index">
+                <ion-thumbnail item-left>
+                    <img src="http://omahit.info/katalog/{{v.image}}">
+                </ion-thumbnail>
+                <small>{{i}}</small>
+                <button ion-button large item-right (click)="hapusAssets(v.id, i)" clear>
+                    <ion-icon name="close"></ion-icon>
+                </button>
+            </ion-item>    
+        </div>            
+
+        <button (click)="saveProduct()" ion-button block color="primary" icon-left>
+            <ion-icon name="cloud-upload"></ion-icon>
+            Simpan Produk
+        </button>
+
+    </ion-list>
+
+</ion-content>

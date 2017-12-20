@@ -1,0 +1,37 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <div *ngIf="is_loggedin">
+        <button menuClose ion-item>
+          <ion-icon name="happy" item-left></ion-icon>
+          <h2>Hi {{username}}</h2>
+          <h3>{{email}}</h3>
+        </button>        
+        <button menuClose ion-item (click)="openPage('logout')">
+          <ion-icon name="log-out" item-left></ion-icon>
+          Logout
+        </button>
+      </div>
+      <div *ngIf="!is_loggedin">
+        <button menuClose ion-item (click)="openLogin()">
+          <ion-icon name="log-in" item-left></ion-icon>
+          Login
+        </button>
+        <button menuClose ion-item (click)="openRegister()">
+          <ion-icon name="log-out" item-left></ion-icon>
+          Register
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,87 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-fab right bottom>
+        <button ion-fab><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab (click)="callOwner()" color="primary"><ion-icon name="call"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-slides pager="true" loop="true" >
+                <ion-slide *ngFor="let v of product.image">
+                    <img src="http://omahit.info/katalog/{{v.image}}" style="height: auto; max-width: 97%; max-height: 325px !important; min-height: 325px !important; margin: auto; display: block;" alt="dxplor" class="content-responsive">
+                </ion-slide>
+            </ion-slides>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-99>
+                        <button ion-button block outline>Rp {{ konversiRupiah(product.price) }}</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Deskripsi
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                {{product.description}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-item-group>
+
+        <ion-item-divider style="color: #000; background-color: #c0c0c0;">
+            <h2><b>Contact</b></h2>
+        </ion-item-divider>
+        <ion-item>
+            <ion-icon name="contact" small item-left></ion-icon>
+            {{product.store.name}}
+        </ion-item> 
+        <ion-item>
+            <ion-icon name="call" small item-left></ion-icon>
+            {{product.store.phone}}
+        </ion-item> 
+    </ion-item-group>
+
+    <ion-card>
+        <ion-card-header>
+            Produk lainnya
+        </ion-card-header>
+        <ion-card-content style="text-align:center">
+            <ion-spinner *ngIf="is_other_loaded == false" name="dots"></ion-spinner>
+            
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div *ngFor="let v of createRange(item_range); let i = index" class="other-product-container other-shadow" (click)="openProduct(other_products[i].id)">
+                            <img src="http://omahit.info/katalog/{{other_products[i].image[0].image}}">
+                            <h6 class="other-title">{{ other_products[i].name.substr(0,10) }}...</h6>
+                            <p class="other-price">Rp {{ konversiRupiah(other_products[i].price) }}</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>SMS Verification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col> 
+                <img src="assets/images/confirm-ico.png">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col style="text-align:center !important"> 
+                Verification code has been sent to {{phone}} via SMS, Not receive code.?
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-list>
+        <ion-item>
+        <ion-input type="number" placeholder="4-Digits Code" [(ngModel)]="code"></ion-input>
+        </ion-item>
+        <button (click)="verification()" ion-button full color="primary">
+        Verification
+        </button>
+    </ion-list>
+
+</ion-content>

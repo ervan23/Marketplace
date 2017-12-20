@@ -1,0 +1,162 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Flight Schedule</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <!--<ion-icon name="md-close" showWhen="windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <h2 style="text-align: center">Flight & Price Detail:</h2>
+    <p style="text-align: center; font-size: 18px; color: #e53935;">IDR {{ konversiRupiah(getLowPrice()) }}</p>
+    <p style="text-align: center"><small>Airline Fee & Taxes Included</small></p>
+    
+    <!-- Segment in content -->
+    <ion-segment [(ngModel)]="segment_view" color="primary">
+        <ion-segment-button value="flight">
+        Flight
+        </ion-segment-button>
+        <ion-segment-button *ngIf="isReturn" value="return_flight">
+        Return
+        </ion-segment-button>
+        <ion-segment-button value="price">
+        Price
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-grid *ngIf="segment_view == 'flight'">
+        <ion-row>
+            <ion-col col-12>
+                <ul class="timeline">
+                    <div *ngFor="let v of flight.flight_schedule">
+                        <li>
+                            <p class="timeline-date">{{v.departure_date}} | {{v.departure_time}}</p>
+                            <div class="timeline-content">
+                                <h6 style="color: #e53935;">{{v.airline_name}} ({{v.flight_code}})</h6>
+                                <p>From {{v.from_name}} ({{v.from}}) Airport</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="timeline-date">{{v.arrival_date}} | {{v.arrival_time}}</p>
+                            <div class="timeline-content">
+                                <h6 style="color: #e53935;">{{v.airline_name}} ({{v.flight_code}})</h6>
+                                <p>To {{v.to_name}} ({{v.to}}) Airport</p>
+                            </div>
+                        </li>
+                    </div>                    
+                </ul>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="segment_view == 'return_flight'">
+        <ion-row>
+            <ion-col col-12>
+                <ul class="timeline">
+                    <div *ngFor="let v of new_flight.flight_schedule">
+                        <li>
+                            <p class="timeline-date">{{v.departure_date}} | {{v.departure_time}}</p>
+                            <div class="timeline-content">
+                                <h6 style="color: #e53935;">{{v.airline_name}} ({{v.flight_code}})</h6>
+                                <p>From {{v.from_name}} ({{v.from}}) Airport</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="timeline-date">{{v.arrival_date}} | {{v.arrival_time}}</p>
+                            <div class="timeline-content">
+                                <h6 style="color: #e53935;">{{v.airline_name}} ({{v.flight_code}})</h6>
+                                <p>To {{v.to_name}} ({{v.to}}) Airport</p>
+                            </div>
+                        </li>
+                    </div>                    
+                </ul>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-list *ngIf="segment_view == 'price'">
+        <ion-item>
+            <ion-grid>
+                <ion-row *ngIf="adult_pax > 0">
+                    <ion-col col-8>
+                        {{flight.airline_name}} (Adult) x {{adult_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(adult_price) }}
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="child_pax > 0">
+                    <ion-col col-8>
+                        {{flight.airline_name}} (Child) x {{child_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(child_price) }}
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="infant_pax > 0">
+                    <ion-col col-8>
+                        {{flight.airline_name}} (Infant) x {{infant_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(infant_price) }}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item *ngIf="isReturn">
+            <ion-grid>
+                <ion-row>
+                    Return Price
+                </ion-row>
+                <ion-row *ngIf="adult_pax > 0">
+                    <ion-col col-8>
+                        {{new_flight.airline_name}} (Adult) x {{adult_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(r_adult_price) }}
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="child_pax > 0">
+                    <ion-col col-8>
+                        {{new_flight.airline_name}} (Child) x {{child_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(r_child_price) }}
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="infant_pax > 0">
+                    <ion-col col-8>
+                        {{new_flight.airline_name}} (Infant) x {{infant_pax}}
+                    </ion-col>
+                    <ion-col col-4 style="font-size: 15px; text-align: right; margin-bottom: 7px;">
+                        Rp. {{ konversiRupiah(r_infant_price) }}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+        <ion-item>
+            Tax
+            <small style="float: right; text-align: right;">Included</small>
+        </ion-item>
+        <ion-item>
+            Sub-total
+            <small style="float: right; text-align: right;">Rp. {{ konversiRupiah(getTotalPrice()) }}</small>
+        </ion-item>
+        <ion-item *ngIf="total_price > low_price">
+            Off
+            <b><small style="float: right; text-align: right; color: #e53935;">Rp. -{{ konversiRupiah(getOffPrice()) }}</small></b>
+        </ion-item>
+        <ion-item>
+            Total
+            <small style="float:right; font-size: 15px; text-align: right;">Rp. {{ konversiRupiah(getLowPrice()) }}</small>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+      <ion-card *ngFor="let v of products" width-50 class="product-card" (click)="openProduct(v.id)">
+        <img class="img-product img-responsive" src="http://omahit.info/katalog/{{v.image[0].image}}"/>
+        <ion-card-content class="product-content">
+          <div class="product-status">            
+            <img *ngIf="isUsingAP(v)" class="img-responsive bintang-ap" src="assets/images/bintangAP.png">
+            <small *ngIf="isRecomended(v)" class="product-recomended">Rekomendasi</small>
+          </div>
+          <ion-card-title class="product-title">
+            {{setFirstLine(v.name)}}
+            {{ getAlmostFullNameProduct(v.name) }}
+          </ion-card-title>
+          <p class="product-price">
+            Rp. {{konversiRupiah(v.price)}}
+          </p>
+          <p class="product-owner">
+            <ion-icon small name="person" item-left></ion-icon>
+            &nbsp;{{getCustomer(v)}}
+          </p>
+          <!--<p class="product-location">
+            <ion-icon small name="pin" item-left></ion-icon>
+            &nbsp;{{getProvince(v)}}
+          </p>-->
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

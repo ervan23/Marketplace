@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>History AP</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row style="margin-bottom: 12px;">
+      <ion-col col-12 style="text-align: center !important;">
+        Current AP Balance: {{balance}}
+      </ion-col>
+    </ion-row>
+    <ion-row style="background-color: #EF5350; border-bottom: 1px solid #fff; padding-top: 7px; padding-bottom: 7px;">
+      <ion-col col-4 style="text-align: center !important;">
+        Description
+      </ion-col>
+      <ion-col col-4 style="text-align: center !important;">
+        Amount (AP)
+      </ion-col>
+      <ion-col col-4 style="text-align: center !important;">
+        Date
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let v of history" style="border-bottom: 1px solid #222;">
+      <ion-col col-4 *ngIf="v.amount < 0">
+        {{v.description}}
+      </ion-col>
+      <ion-col *ngIf="v.amount > 0" col-4 style="color: blue">
+        {{v.description}}
+      </ion-col>
+      <ion-col *ngIf="v.amount < 0" col-4 style="text-align: center !important;">
+        {{v.amount}} AP
+      </ion-col>
+      <ion-col *ngIf="v.amount > 0" col-4 style="text-align: center !important; color: blue">
+        {{v.amount}} AP
+      </ion-col>
+      <ion-col *ngIf="v.amount < 0" col-4 style="text-align: center !important;">
+        {{v.created_at}}
+      </ion-col>      
+      <ion-col *ngIf="v.amount > 0" col-4  style="text-align: center !important; color: blue">
+        {{v.created_at}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

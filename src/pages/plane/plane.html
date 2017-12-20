@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Plane</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="pin" item-left></ion-icon>
+      <ion-label floating>Origin</ion-label>
+      <ion-input type="text" (input)="getOriginItem($event)" [(ngModel)]="origin"></ion-input>
+    </ion-item>
+
+    <div *ngIf="isSearchOrigin">
+      <ion-item *ngFor="let ap of tmp_listAirport; let x = index" (click)="setOrigin(ap)">
+        {{ap}}
+      </ion-item>
+    </div>
+    
+    <ion-item>
+      <ion-icon name="pin" item-left></ion-icon>
+      <ion-label floating>Destination</ion-label>
+      <ion-input type="text" (input)="getDestinationItem($event)" [(ngModel)]="destination"></ion-input>
+    </ion-item>
+
+    <div *ngIf="isSearchDest">
+      <ion-item *ngFor="let ap of tmp_listAirport; let x = index" (click)="setDestination(ap)">
+        {{ap}}
+      </ion-item>
+    </div>
+
+    <ion-item (click)="openFlightCalendar()">
+      <ion-icon name="calendar" item-left></ion-icon>
+      <p>Date Flight</p>
+      {{showReadableDate(dateFlight)}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="swap" item-left></ion-icon>
+      <ion-label> Return Flight ?</ion-label>
+      <ion-toggle [(ngModel)]="isReturn" color="light"></ion-toggle>
+    </ion-item>
+    <ion-item class="return-flight" *ngIf="isReturn" (click)="openReturnCalendar()">
+      <ion-icon name="calendar" item-left></ion-icon>
+      <p>Return Date</p>
+      {{showReadableDate(dateReturn)}}
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 style="text-align: center">Adult</ion-col>
+        <ion-col col-4 style="text-align: center">Child</ion-col>
+        <ion-col col-4 style="text-align: center">Infant</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <!--<ion-icon name="man" class="adult-icon" item-left></ion-icon>-->
+            <!--<ion-label>Adult > 12 yo</ion-label>-->
+            <ion-select [(ngModel)]="adult" (ionChange)="onPassengerChange()">
+              <ion-option value="1" selected>1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+              <ion-option value="5">5</ion-option>
+              <ion-option value="6">6</ion-option>
+              <ion-option value="7">7</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <!--<ion-icon name="man" class="child-icon" item-left></ion-icon>-->
+            <!--<ion-label>Child 2-12 yo</ion-label>-->
+            <ion-select [(ngModel)]="child" (ionChange)="onPassengerChange()">
+              <ion-option value="0" selected>0</ion-option>
+              <ion-option value="1">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+              <ion-option value="5">5</ion-option>
+              <ion-option value="6">6</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <!--<ion-icon name="man" class="infant-icon" item-left></ion-icon>-->
+            <!--<ion-label>Infant < 2 yo</ion-label>-->
+            <ion-select [(ngModel)]="infant" (ionChange)="onPassengerChange()">
+              <ion-option value="0" selected>0</ion-option>
+              <ion-option value="1">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4 style="text-align: center">> 12 Years old</ion-col>
+        <ion-col col-4 style="text-align: center">2 - 12 Years old</ion-col>
+        <ion-col col-4 style="text-align: center">< 2 Years old</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button (click)="findFlight()" ion-button full color="primary" icon-left>
+      <ion-icon name="search"></ion-icon>
+      Search
+    </button>
+  </ion-list>
+</ion-content>

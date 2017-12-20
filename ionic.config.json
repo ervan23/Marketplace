@@ -1,0 +1,12 @@
+{
+  "name": "dxplor",
+  "app_id": "23e834fa",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://dxplor.com"
+    }
+  ]
+}

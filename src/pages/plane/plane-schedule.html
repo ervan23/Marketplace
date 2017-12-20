@@ -1,0 +1,107 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Flight Schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-item-group>
+        
+        <ion-item-divider color="darkLight" style="color: #000; background-color: #c0c0c0;">
+            <h2><b>Flight</b></h2>
+        </ion-item-divider>
+        <ion-item>
+            <button ion-button outline item-right (click)="openTimeline()">DETAILS</button>
+            <h3>{{from}}&nbsp;&nbsp;&nbsp;<ion-icon small name="arrow-forward"></ion-icon>&nbsp;&nbsp;&nbsp;{{to}}</h3>
+        </ion-item>
+        <ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        {{getShortDate(departure_date)}}
+                    </ion-col>
+                    <ion-col col-6 style="text-align: right !important;">
+                        {{departure_time}}&nbsp;&nbsp;
+                        <ion-icon small name="arrow-forward"></ion-icon>
+                        &nbsp;&nbsp;{{arrival_time}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6 style="color: #858585;;">
+                        <small><p>{{ getPriceType(schedule.price_type) }}</p></small>
+                    </ion-col>
+                    <ion-col col-6 style="color: #858585; text-align: right !important;">
+                        <small>
+                            {{code_from}}&nbsp;&nbsp;
+                            <ion-icon ios="ios-plane" md="ios-plane"></ion-icon>
+                            &nbsp;&nbsp;{{code_to}}
+                            ({{ getFlightDuration(schedule.flight_schedule) }})
+                        </small>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+
+    </ion-item-group>
+
+    <ion-item-group>
+
+        <ion-item-divider style="color: #000; background-color: #c0c0c0;">
+            <h2><b>Contact</b></h2>
+        </ion-item-divider>
+        <ion-item>
+            <ion-icon name="contact" small item-left></ion-icon>
+            {{contact.name}}
+            <button ion-button outline item-right (click)="changeContactName()">CHANGE</button>
+        </ion-item> 
+        <ion-item>
+            <ion-icon name="call" small item-left></ion-icon>
+            +{{contact.phone}}
+            <button ion-button outline item-right (click)="changeContactPhone()">CHANGE</button>
+        </ion-item> 
+        <ion-item>
+            <ion-icon name="at" small item-left></ion-icon>
+            {{contact.email}}
+            <button ion-button outline item-right (click)="changeContactEmail()">CHANGE</button>
+        </ion-item>
+
+        <ion-item-divider style="color: #000; background-color: #c0c0c0;">
+            <h2><b>Passenger</b></h2>
+        </ion-item-divider>
+        <ion-item *ngFor="let a of createRange(adult_pax); let i=index;">
+            <ion-icon *ngIf="a_passengers.length >= (i+1)" color="primary" name="checkmark" small item-left></ion-icon>
+            Fill Adult Passenger Details
+            <button ion-button outline item-right (click)="fillAdultDetail(i)">EDIT</button>
+        </ion-item>
+        <ion-item *ngFor="let b of createRange(child_pax); let i=index;">
+            <ion-icon *ngIf="c_passengers.length >= (i+1)" color="primary" name="checkmark" small item-left></ion-icon>
+            Fill Child Passenger Details
+            <button ion-button outline item-right (click)="fillChildDetail(i)">EDIT</button>
+        </ion-item>
+        <ion-item *ngFor="let c of createRange(infant_pax); let i=index;">
+            <ion-icon *ngIf="i_passengers.length >= (i+1)" color="primary" name="checkmark" small item-left></ion-icon>
+            Fill Infant Passenger Details
+            <button ion-button outline item-right (click)="fillInfantDetail(i)">EDIT</button>
+        </ion-item>
+
+    </ion-item-group>
+
+    <ion-list padding>        
+        <ion-item>
+            <div align="center">
+                <h3><b>Total Price</b></h3>
+                <p style="color:#e53935;">
+                    <b>Rp {{ konversiRupiah(getLowPrice()) }}</b>
+                </p>
+                <small>Termasuk PPN & airline fee</small>
+            </div>
+        </ion-item>  
+        <button (click)="bookFlight()" ion-button block color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Book now
+        </button>
+    </ion-list>  
+</ion-content>

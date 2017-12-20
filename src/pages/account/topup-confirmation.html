@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TopUp Confirmation</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            Top up Information
+        </ion-card-header>
+        <ion-card-content *ngIf="dest_bank == 'BCA'">
+            Silahkan transfer sesuai dengan jumlah amount yang tertera, termasuk 3 digit dari sistem. Saldo akan ditambahkan sesuai nominal transfer yang tertera.
+            <br /><br />
+            Waktu transfer 1 x 24 jam, Top Up diproses setiap hari kerja Senin-Sabtu 09.00 - 21.00 WIB. Khusus hari Minggu & Libur Top Up diproses 2x yaitu jam13.00 dan 19.00 WIB
+            <br /><br />
+            <h3><b>Nominal: Rp. {{amount}}</b></h3>
+            <h3><b>Tujuan: BCA (712 046 8868)</b></h3>
+            <h3>a/n : PT DXplor Duta Media</h3>
+        </ion-card-content>
+        <ion-card-content *ngIf="dest_bank == 'MANDIRI'">
+            Silahkan transfer sesuai dengan jumlah amount yang tertera, termasuk 3 digit dari sistem. Saldo akan ditambahkan sesuai nominal transfer yang tertera.
+            <br /><br />
+            Waktu transfer 1 x 24 jam, Top Up diproses setiap hari kerja Senin-Sabtu 09.00 - 21.00 WIB. Khusus hari Minggu & Libur Top Up diproses 2x yaitu jam13.00 dan 19.00 WIB
+            <br /><br />
+            <h3><b>Nominal: Rp. {{amount}}</b></h3>
+            <h3><b>Tujuan: MANDIRI (155 001 122 8668)</b></h3>
+            <h3>a/n : PT DXplor Duta Media</h3>
+        </ion-card-content>
+        <ion-card-content *ngIf="dest_bank == 'BRI'">
+            Silahkan transfer sesuai dengan jumlah amount yang tertera, termasuk 3 digit dari sistem. Saldo akan ditambahkan sesuai nominal transfer yang tertera.
+            <br /><br />
+            Waktu transfer 1 x 24 jam, Top Up diproses setiap hari kerja Senin-Sabtu 09.00 - 21.00 WIB. Khusus hari Minggu & Libur Top Up diproses 2x yaitu jam13.00 dan 19.00 WIB
+            <br /><br />
+            <h3><b>Nominal: Rp. {{amount}}</b></h3>
+            <h3><b>Tujuan: BRI (0438-01-000442-308)</b></h3>
+            <h3>a/n : PT DXplor Duta Media</h3>
+        </ion-card-content>
+        <ion-card-content *ngIf="dest_bank == 'BNI'">
+            Silahkan transfer sesuai dengan jumlah amount yang tertera, termasuk 3 digit dari sistem. Saldo akan ditambahkan sesuai nominal transfer yang tertera.
+            <br /><br />
+            Waktu transfer 1 x 24 jam, Top Up diproses setiap hari kerja Senin-Sabtu 09.00 - 21.00 WIB. Khusus hari Minggu & Libur Top Up diproses 2x yaitu jam13.00 dan 19.00 WIB
+            <br /><br />
+            <h3><b>Nominal: Rp. {{amount}}</b></h3>
+            <h3><b>Tujuan: BNI (1122338669)</b></h3>
+            <h3>a/n : PT DXplor Duta Media</h3>
+        </ion-card-content>
+    </ion-card>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 padding style="text-align: center !important;">
+                <h4>Apakah anda sudah melakukan Transfer ?</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6 padding>
+                <button ion-button full (click)="cancelTopup()" icon-left>
+                    <ion-icon name="close"></ion-icon>
+                    Batal
+                </button>           
+            </ion-col>
+            <ion-col col-6 padding>
+                <button ion-button full color="primary" (click)="confirmToup()" icon-left>
+                    <ion-icon name="cash"></ion-icon>
+                    Ya
+                </button>           
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,295 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>KATALOG</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="presentActionSheet()">
+        Menu
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="segment_view" color="primary">
+      <ion-segment-button value="member">
+      Market
+      </ion-segment-button>
+  </ion-segment>
+  
+  <ion-grid *ngIf="segment_view == 'member'">
+    
+    <div class="material-shadow" style="margin-bottom: 10px;">
+      <p style="font-size: 14px; text-align: left; color:#212121; padding-left:5px;">Gaya Hidup</p>
+      <ion-row style="border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(1, 'Fashion & Aksesoris')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/fashion.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Fashion & Aksesoris</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(14, 'Souvenir, Kado & Hadiah')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/gift.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Souvenir, Kado & Hadiah</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(10, 'Kesehatan')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/health.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Kesehatan</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(16, 'Makanan & Minuman')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/fnb.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Makanan & Minuman</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(4, 'Rumah Tangga')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/home.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Rumah Tangga</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(3, 'Kecantikan')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/beauty.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Kecantikan</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(2, 'Pakaian')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/clothes.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Pakaian</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(17, 'Buku')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/books.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Buku</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(20, 'Property')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img style="padding: 5px !important" width="45" height="45" src="http://market.dxplor.com/asset/category/sale.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Property</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(21, 'Produk Lainnya')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img style="padding: 5px !important" width="45" height="45" src="http://market.dxplor.com/asset/category/archive.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Produk Lainnya</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+    </div>
+    
+    <div class="material-shadow" style="margin-bottom: 10px;">
+      <p style="font-size: 14px; text-align: left; color:#212121; padding-left:5px;">Teknologi</p>
+      <ion-row style="border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(18, 'Software')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/sw.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Software</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(9, 'Laptop & Aksesoris')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/laptop.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Laptop & Aksesoris</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(8, 'Handphone & Tablet')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/handphone.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Handphone & Tablet</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(6, 'Kamera, Foto & Video')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/camera.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Kamera, Foto & Video</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(5, 'Elektronik')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/electronic.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Elektronik</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(7, 'Otomotif')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/otomotif.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Otomotif</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+    </div>
+
+    <div class="material-shadow" style="margin-bottom: 10px;">
+      <p style="font-size: 14px; text-align: left; color:#212121; padding-left:5px;">Hiburan & Lainnya</p>
+      <ion-row style="border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(19, 'Film, Musik & Game')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/film.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Film, Musik & Game</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(15, 'Mainan & Hobi')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/toys.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Mainan & Hobi</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #dedede; padding:5px 0px !important;">
+
+        <ion-col (click)="openProducts(12, 'Olahraga')" col-6 class="zero-padding" style="border-right: 1px solid #dedede;">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/sport.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Olahraga</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+        <ion-col (click)="openProducts(13, 'Office & Stationary')" col-6 class="zero-padding">
+          <ion-row>
+            <ion-col col-2>
+              <img width="45" height="45" src="http://market.dxplor.com/asset/category/office.png">
+            </ion-col>
+            <ion-col col-4 style="margin-left: -35px !important;">
+              <p style="font-size: 12px; color:#757575">Office & Stationary</p>
+            </ion-col>
+          </ion-row>       
+        </ion-col>
+
+      </ion-row>
+    </div>
+
+  </ion-grid>
+  
+</ion-content>

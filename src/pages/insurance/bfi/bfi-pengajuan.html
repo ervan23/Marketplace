@@ -1,0 +1,89 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>BFI Finance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>  
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nama</ion-label>
+      <ion-input type="text" [(ngModel)]="nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone-1</ion-label>
+      <ion-input type="tel" [(ngModel)]="hp1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone-2</ion-label>
+      <ion-input type="tel" [(ngModel)]="hp2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Alamat</ion-label>
+      <ion-textarea [(ngModel)]="alamat"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Unit Jaminan</ion-label>
+      <ion-select [(ngModel)]="unit_jaminan">
+        <ion-option value="">--Pilih--</ion-option>
+        <ion-option value="Ruko">Ruko</ion-option>
+        <ion-option value="Rumah">Rumah</ion-option>
+        <ion-option value="Mobil">Mobil</ion-option>
+        <ion-option value="Motor">Motor</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Pinjaman (nominal)</ion-label>
+      <ion-input type="number" [(ngModel)]="pinjaman"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button (click)="presentActionSheet()" ion-button color="primary" item-right>
+        Pilih
+      </button>
+      <ion-label>
+        Foto KTP
+      </ion-label>
+      <ion-icon name='card' item-left></ion-icon>
+    </ion-item>
+    <ion-item *ngIf="isImageSelected">
+      <img [src]="imageURL" class="content-responsive">
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Jangka Waktu</ion-label>
+      <ion-select [(ngModel)]="jangka_waktu">
+        <ion-option value="">--Pilih--</ion-option>
+        <ion-option value="6">6 Bulan</ion-option>
+        <ion-option value="12">12 Bulan</ion-option>
+        <ion-option value="18">18 Bulan</ion-option>
+        <ion-option value="24">24 Bulan</ion-option>
+        <ion-option value="30">30 Bulan</ion-option>
+        <ion-option value="36">36 Bulan</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Referensi Email</ion-label>
+      <ion-input type="email" [(ngModel)]="referensi"></ion-input>
+    </ion-item>
+
+    <button (click)="proses()" ion-button full color="primary">
+      Proses Pengajuan
+    </button>
+
+  </ion-list>
+</ion-content>

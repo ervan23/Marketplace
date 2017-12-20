@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Daftar Pengajuan</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let v of listPengajuan">
+        <ion-icon color="primary" *ngIf="v.status == '1'" name="timer" item-left></ion-icon>
+        <ion-icon color="primary" *ngIf="v.status == '2'" name="checkmark" item-left></ion-icon>
+        <ion-icon color="primary" *ngIf="v.status == '3'" name="done-all" item-left></ion-icon>        
+        <ion-icon color="primary" *ngIf="v.status == '4'" name="close" item-left></ion-icon>
+        <h2>{{ v.nama }}</h2>
+        <h3>{{ dateFormat(v.tanggal) }}</h3>
+        <p>{{ v.bfi_no }}</p>
+        <small item-right><b>{{ getStatus(v.status) }}</b></small>
+    </ion-item>
+  </ion-list>
+</ion-content>

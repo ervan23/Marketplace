@@ -1,0 +1,122 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>BFI Finance</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="openListPengajuan()">
+      <ion-icon name="list-box"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid style="padding: 0px !important;">
+    <ion-row>
+      <ion-slides pager="true" loop="true" autoplay="3000">
+        <ion-slide>
+          <img src="assets/images/bfi-1.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/bfi-2.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/bfi-3.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <ion-row>
+      <ion-col style="line-height: 175%;">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              <h3><b>Keunggulan<br>Kami:</b></h3>
+            </ion-col>
+            <ion-col col-2 style="margin-left: 35px;">
+              <button small (click)="openPengajuan()" ion-button color="primary">
+                  Pengajuan
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ul>
+          <li>
+            Tanpa proses BI Checking
+          </li>
+          <li>
+            Proses 1 hari kerja untuk Aplikasi Motor
+          </li>
+          <li>
+            Proses 2 hari kerja (1 hari survei,1 hari approved) utk Aplikasi Mobil
+          </li>
+          <li>
+            Cair lebih besar (s/d 85%)
+          </li>
+          <li>
+            Suku bunga ringan mulai dari 0,99% perbulan
+          </li>
+          <li>
+            BPKB di jamin aman 100%
+          </li>
+          <li>
+            Angsuran jaminan BPKB Mobil sampai dengan 36 bulan,khusus Rumah dan Ruko bisa s/d 60 bulan
+          </li>
+          <li>
+            Angsuran jaminan BPKB Motor sampai dengan 18 bulan
+          </li>
+          <li>
+            Didukung oleh perusahaan Multifinance terbesar & terpercaya
+          </li>
+          <li>
+            Melayani jemput data tanpa biaya
+          </li>
+          <li>
+            Pinjaman dana mulai dari 1.5 juta sampai 5 Milyar
+          </li>
+          <li>
+            Tanpa potongan,dana anda akan diterima utuh
+          </li>
+          <li>
+            BFI mempunyai lebih dari 200 cabang di seluruh Indonesia
+          </li>
+          <li>
+            Terima BPKB belum balik nama, sekalian dibalik nama
+          </li>
+          <li>
+            Terima BPKB belum balik nama ,sekalian di balik nama
+          </li>
+          <li>
+            Melayani take over dari leasing lain
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="line-height: 175%;">
+        <h2>Keuntungan Nasabah:</h2>
+        <ul>
+          <li>
+            Tanpa uang tip
+          </li>
+          <li>
+            BPKB dijamin aman
+          </li>
+          <li>
+            Bayar angsuran tidak harus antri
+          </li>
+          <li>
+            Proses transparan,konsumen bisa cek proses sampai dengan dimana
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button (click)="openSimulasi()" ion-button block color="primary">
+            Simulasi Angsuran
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

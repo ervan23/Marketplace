@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Ahli Waris</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <!--<ion-icon name="md-close" showWhen="windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>    
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Nama</ion-label>
+            <ion-input type="text" [(ngModel)]="nama"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Hubungan</ion-label>
+            <ion-select [(ngModel)]="hubungan">
+                <ion-option value="">--Pilih--</ion-option>
+                <ion-option value="Orang Tua">Orang Tua</ion-option>
+                <ion-option value="Suami">Suami</ion-option>
+                <ion-option value="Istri">Istri</ion-option>
+                <ion-option value="Anak">Anak</ion-option>
+                <ion-option value="Saudara">Saudara</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Persentase</ion-label>
+            <ion-input type="number" max="100" [(ngModel)]="presentase"></ion-input>
+        </ion-item>
+
+        <button (click)="done()" ion-button full color="primary" icon-left>
+            Done
+        </button>
+
+    </ion-list>
+</ion-content>

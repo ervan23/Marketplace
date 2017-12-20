@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "312281598742",
+    "project_id": "dxplor-6a87d"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312281598742:android:359b215eee8ce5d1",
+        "android_client_info": {
+          "package_name": "com.incube.lib.dxplor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312281598742-dha6i3n8fihe3560fvberpu8d5fk02qm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.incube.lib.dxplor",
+            "certificate_hash": "1a9ba67607438837b16fdc392b1a9a738c0d5f68"
+          }
+        },
+        {
+          "client_id": "312281598742-6mj8v9v25sie769m6ggc9snmi2s1km2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD974hUAU8ocgA7atV-4hvixPFMIYnyyiY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

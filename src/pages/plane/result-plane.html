@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Departure Flight</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let v of search_result" (click)="showSchedule(v.flight_id)">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <h3 style="font-weight: bold; color: #000">
+                            {{ getAirlineName(v.flight_schedule) }}
+                            <img src="{{getAirlineLogo(v.flight_schedule)}}" style="width:45px; height: 45px;">
+                        </h3>
+                        <p>
+                            {{ getFlightTime(v.flight_schedule) }}
+                        </p>
+                        <p>
+                            {{ getFlightDuration(v.flight_schedule) }}
+                        </p>
+                    </ion-col>
+                    <ion-col col-6 style="text-align: right; padding-top: 13px;">
+                        <p *ngIf="(v.adult_base + v.adult_tax) > ((v.lowest_price + v.markup_adult)-((50/100)*v.discount_adult))">
+                            <small><del>Rp {{ konversiRupiah(v.adult_base + v.adult_tax) }}</del></small>
+                        </p>
+                        <h3 style="font-weight: bold; color: #e53935">
+                            Rp {{ konversiRupiah((v.lowest_price + v.markup_adult)-((50/100)*v.discount_adult)) }} }}
+                        </h3>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+</ion-content>

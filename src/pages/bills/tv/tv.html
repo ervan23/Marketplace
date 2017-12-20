@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TV Berlangganan</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Customer ID</ion-label>
+            <ion-input [(ngModel)]="customer_id" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Jenis Tagihan</ion-label>
+            <ion-select [(ngModel)]="jenis_tagihan">
+                <ion-option *ngFor="let v of tagihan" value="{{v.name}}">{{v.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <button ion-button block (click)="checkBilling()" color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Next
+        </button>
+    </ion-list>
+
+</ion-content>

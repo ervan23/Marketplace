@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>PAM Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            <b>STRUK PEMBAYARAN TAGIHAN PAM</b>
+        </ion-list-header>
+        <ion-item>
+            <h2>IDPEL</h2>
+            <p>{{idpelanggan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>NAMA</h2>
+            <p>{{namapelanggan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>BLN/THN</h2>
+            <p>{{tagihanbulan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>TGL LUNAS</h2>
+            <p>{{tgllunas}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>RP TAG</h2>
+            <p>Rp. {{tagihan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>IPN</h2>
+            <p>{{refid}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>ADMIN</h2>
+            <p>{{hargaadmin}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>TOTAL</h2>
+            <p>Rp. {{totalharga}}</p>
+        </ion-item>        
+    </ion-list>
+    <div style="margin-left: 20px;">
+        <p>- PDAM menyatakan struk ini sebagai bukti pembayaran yang sah</p>
+    </div>
+
+    <button ion-button full (click)="goHome()" color="danger" icon-left>
+        <ion-icon name="checkmark"></ion-icon>
+        OK
+    </button>
+    
+</ion-content>

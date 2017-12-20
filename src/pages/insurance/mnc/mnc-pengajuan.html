@@ -1,0 +1,90 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Pembelian MNC Life</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>  
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nama</ion-label>
+      <ion-input type="text" [(ngModel)]="nama"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>No KTP</ion-label>
+      <ion-input type="number" [(ngModel)]="no_ktp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Tanggal lahir</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="tanggal_lahir"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone</ion-label>
+      <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Alamat</ion-label>
+      <ion-textarea [(ngModel)]="alamat"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Kota</ion-label>
+      <ion-input type="text" [(ngModel)]="kota"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Referensi Email</ion-label>
+      <ion-input type="email" [(ngModel)]="referensi"></ion-input>
+    </ion-item>
+
+    <ion-item-group>
+        <ion-item-divider style="color: #000; background-color: #c0c0c0;">
+                <h2><b>Ahli Waris</b></h2>
+        </ion-item-divider>
+        <ion-item>
+            <ion-icon *ngIf="aw_satu.length >= 1" color="primary" name="checkmark" small item-left></ion-icon>
+            Ahli Waris 1
+            <button ion-button clear item-right (click)="fillAWsatu()" icon-only>
+              <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-item>
+        <ion-item *ngIf="(aw_satu.length >= 1 && total_persen < 100) || (aw_dua.length >= 1 && total_persen <= 100)">
+            <ion-icon *ngIf="aw_dua.length >= 1" color="primary" name="checkmark" small item-left></ion-icon>
+            Ahli Waris 2
+            <button *ngIf="aw_dua.length >= 1" ion-button clear item-right (click)="deleteAWdua()" icon-only>
+              <ion-icon name="close"></ion-icon>
+            </button>
+            <button ion-button clear item-right (click)="fillAWdua()" icon-only>
+              <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-item>
+        <ion-item *ngIf="(aw_dua.length >= 1 && total_persen < 100) || (aw_tiga.length >= 1 && total_persen <= 100)">
+            <ion-icon *ngIf="aw_tiga.length >= 1" color="primary" name="checkmark" small item-left></ion-icon>
+            Ahli Waris 3
+            <button *ngIf="aw_tiga.length >= 1" ion-button clear item-right (click)="deleteAWtiga()" icon-only>
+              <ion-icon name="close"></ion-icon>
+            </button>
+            <button ion-button clear item-right (click)="fillAWtiga()" icon-only>
+              <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-item-group>
+
+    <button (click)="proses()" ion-button full color="primary">
+      Proses dan Bayar
+    </button>
+
+  </ion-list>
+</ion-content>

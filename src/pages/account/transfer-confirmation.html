@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Transfer D-Pay Confirmation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            Data Penerima
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>Nama: {{dest_name}}</ion-item>
+                <ion-item>Email: {{dest_email}}</ion-item>
+                <ion-item>Nominal: {{nominal}}</ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 padding style="text-align: center !important;">
+                <h4>Apakah anda ingin melanjutkan transfer ?</h4>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6 padding>
+                <button ion-button full (click)="cancelTransfer()" icon-left>
+                    <ion-icon name="close"></ion-icon>
+                    Batal
+                </button>           
+            </ion-col>
+            <ion-col col-6 padding>
+                <button ion-button full color="primary" (click)="confirmTransfer()" icon-left>
+                    <ion-icon name="cash"></ion-icon>
+                    Ya
+                </button>           
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

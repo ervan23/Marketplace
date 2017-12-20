@@ -1,0 +1,36 @@
+page-timeline-schedule{
+   .timeline {
+        list-style: none;
+    }
+    .timeline > li {
+        margin-bottom: 60px;
+    }
+
+    /* for Desktop */
+    .timeline > li {
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+    }
+    .timeline-date {
+        width: 110px;
+        float: left;
+        margin-top: 20px;
+    }
+    .timeline-content {
+        width: 75%;
+        float: left;
+        border-left: 3px #EF5350 solid;
+        padding-left: 30px;
+    }
+    // .timeline-content:before {
+    //     content: '';
+    //     width: 7px;
+    //     height: 7px;
+    //     background: #222;
+    //     position: absolute;
+    //     left: 106px;
+    //     top: 24px;
+    //     border-radius: 100%;
+    // }
+}

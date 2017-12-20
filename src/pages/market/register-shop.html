@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Register Toko</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Nama Toko</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Pemilik</ion-label>
+            <ion-input type="text" [(ngModel)]="owner"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Alamat</ion-label>
+            <ion-textarea [(ngModel)]="address"></ion-textarea>
+        </ion-item>          
+
+        <button (click)="saveShop()" ion-button block color="primary" icon-left>
+            <ion-icon name="cloud-upload"></ion-icon>
+            Simpan
+        </button>
+
+    </ion-list>
+
+</ion-content>

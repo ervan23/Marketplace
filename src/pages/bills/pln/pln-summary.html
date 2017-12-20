@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>PLN Summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            <b>STRUK PEMBAYARAN TAGIHAN LISTRIK</b>
+        </ion-list-header>
+        <ion-item>
+            <h2>IDPEL</h2>
+            <p>{{idpelanggan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>NAMA</h2>
+            <p>{{namapelanggan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>DAYA</h2>
+            <p>{{daya}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>BLN/THN</h2>
+            <p>{{tagihanbulan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>STAND METER</h2>
+            <p>{{standmeter}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>RP TAG PLN</h2>
+            <p>Rp. {{tagihan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>REF</h2>
+            <p>{{refid}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>ADMIN</h2>
+            <p>{{hargaadmin}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>TOTAL</h2>
+            <p>{{totalharga}}</p>
+        </ion-item>        
+    </ion-list>
+    <div style="margin-left: 20px;">
+        <p>- PLN menyatakan struk ini sebagai bukti pembayaran yang sah</p>
+        <p>- Informasi Hubungi call center : 123 atau hubungi PLN Terdekat</p>
+    </div>
+
+    <button ion-button full (click)="goHome()" color="danger" icon-left>
+        <ion-icon name="checkmark"></ion-icon>
+        OK
+    </button>
+    
+</ion-content>

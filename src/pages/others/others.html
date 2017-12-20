@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Others</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="primary">
+    <ion-searchbar (ionInput)="search($event)" (ionCancel)="resetSearch()" (ionClear)="resetSearch()" showCancelButton="true">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isSearchMode" style="text-align: center; margin-top:10px;">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div *ngIf="failGetdata" style="text-align: center; margin-top:10px;">
+    <p style="color:#888">No result found, try other keywords..!</p>
+  </div>
+
+  <ion-card *ngFor="let v of tmp_otherList">
+    <img src="http://dxplor.com/dxplor/assets/img/others/{{v.IMG}}"/>
+    <ion-card-content style="border-bottom:1px solid #e0e0e0;">
+      <ion-card-title>
+        {{v.NAME}}
+        </ion-card-title>
+      <p small [innerHtml]="strip_tags(v.VALUE, '').substr(0,106)">
+      </p>
+    </ion-card-content>
+    <button ion-button full clear (click)="openDetail(v.ID, v.IMG, v.IMG2, v.IMG3, 'others', v.NAME)">
+        Detail
+    </button>
+  </ion-card>
+</ion-content>

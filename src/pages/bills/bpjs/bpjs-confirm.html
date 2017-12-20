@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>BPJS Confirmation</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Cancel</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            Customer Detail:
+        </ion-list-header>
+        <ion-item>
+            <h2>Customer ID</h2>
+            <p>{{id_customer}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Customer Name</h2>
+            <p>{{customer_name}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Total Amount</h2>
+            <p>{{total_amount}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>No Invoice</h2>
+            <p>{{no_invoice}}</p>
+        </ion-item>
+        <button ion-button full (click)="confirm_pay()" color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Pay
+        </button>
+        <button ion-button full (click)="dismiss()" color="danger" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Cancel
+        </button>
+    </ion-list>
+    
+</ion-content>

@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MLM page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TopUp Packet Data</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Phone</ion-label>
+            <ion-input type="tel" [(ngModel)]="phone" (input)="inputHandle($event)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="op_logo">
+            <img src="{{op_logo}}">
+        </ion-item>
+        <ion-item text-wrap>
+            <ion-label>Nominal</ion-label>
+            <ion-select [(ngModel)]="op_price">
+                <ion-option text-wrap *ngFor="let v of op_packetList" value="{{v.HARGA}}">{{v.PACKET}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50 padding>
+                Price: {{op_price}}
+            </ion-col>
+            <ion-col width-50>
+                <button ion-button full color="primary" (click)="topUp()" icon-left>
+                    <ion-icon name="card"></ion-icon>
+                    TopUp
+                </button>                    
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

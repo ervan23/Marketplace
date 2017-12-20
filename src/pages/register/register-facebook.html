@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Flight Schedule</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Close</span>
+        <!--<ion-icon name="md-close" showWhen="windows"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>    
+    <ion-card>
+        <img src="{{user.picture}}">
+    </ion-card>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input [(ngModel)]="user.first_name" type="text" [readonly]="true"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input [(ngModel)]="user.last_name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input [(ngModel)]="user.phone" type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <p style="text-align: center;">
+        <small>
+            By clicking Sign Up, you agree to our Term and that you have read our Data use Policy
+        </small>
+    </p>
+
+    <button (click)="doRegister()" ion-button full color="primary" icon-left>
+        <ion-icon name="log-in"></ion-icon>
+        Register
+    </button>
+
+</ion-content>

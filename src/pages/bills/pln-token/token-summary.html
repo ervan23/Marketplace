@@ -1,0 +1,83 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>PLN Prepaid Summary</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="goHome()">
+        <span ion-text showWhen="ios,android">Home</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            Payment Detail:
+        </ion-list-header>
+        <ion-item>
+            <h2>Customer ID</h2>
+            <p>{{id_customer}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>No Meter</h2>
+            <p>{{no_meter}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Customer Name</h2>
+            <p>{{customer_name}}</p>
+        </ion-item>        
+        <ion-item>
+            <h2>Tarif/Daya</h2>
+            <p>{{daya}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>No Ref</h2>
+            <p>{{noref}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Bayar</h2>
+            <p>Rp. {{harga}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Admin bank</h2>
+            <p>{{adminca}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Materai</h2>
+            <p>{{materai}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>PPn</h2>
+            <p>{{ppn}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>PPj</h2>
+            <p>{{ppj}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Angsuran</h2>
+            <p>{{angsuran}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Rp Stroom/Token</h2>
+            <p>{{rptoken}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Jml Kwh</h2>
+            <p>{{kwh}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Token</h2>
+            <p>{{token}}</p>
+        </ion-item>
+        <button ion-button full (click)="goHome()" color="primary" icon-left>
+            <ion-icon name="home"></ion-icon>
+            Home
+        </button>
+    </ion-list>
+    
+</ion-content>

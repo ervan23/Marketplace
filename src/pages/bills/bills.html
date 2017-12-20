@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Bills</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <ion-grid style="padding: 0px !important; margin-top: 10px;">
+    <ion-row style="padding: 0px !important;">
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.pln)">
+          <img src="{{ img_apk.banner_pln }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">PLN Prabayar</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.plnToken)">
+          <img src="{{ img_apk.banner_pln_token }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">PLN Token</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding: 0px !important;">
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.pam)">
+          <img src="{{ img_apk.banner_pam }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">PAM</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.pascabayar)">
+          <img src="{{ img_apk.pascabayar }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Telkom</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding: 0px !important;">
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.telkom)">
+          <img src="{{ img_apk.banner_telkom }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Telkom</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.speedy)">
+          <img src="{{ img_apk.banner_speedy }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Speedy</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding: 0px !important;">
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.bpjs)">
+          <img src="{{ img_apk.banner_bpjs }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">BPJS</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.tv)">
+          <img src="{{ img_apk.tv }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Speedy</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+    <ion-row style="padding: 0px !important;">
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="underConstruction()">
+          <img src="{{ img_apk.game }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Telkom</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+      <ion-col width-50 style="margin: 0px !important; padding: 0px !important;">
+        <ion-card style="padding: 0px !important; margin: 0px !important;" (click)="goToPage(page.leasing)">
+          <img src="{{ img_apk.leasing }}"/>
+          <div class="card-inner-content">
+            <!--<div class="card-title">Speedy</div>-->
+            <!--div class="card-subtitle">Ready</div-->
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

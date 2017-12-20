@@ -1,0 +1,65 @@
+<!--
+  Generated template for the Hotel page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Hotel In Progress...</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-icon name="pin" item-left></ion-icon>
+      <ion-label>Destination</ion-label>
+      <ion-select [(ngModel)]="destCountry">
+        <ion-option *ngFor="let v of autocomplete" value="{{v}}">{{v}}</ion-option>
+      </ion-select>
+    </ion-item>  
+    <ion-item>
+      <ion-icon name="calendar" item-left></ion-icon>
+      <ion-label>Check-in</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" min="{{now}}" max="{{max}}" [(ngModel)]="cekin" pickerFormat="DD MM YYYY" (ionChange)="onCekinDateChanged()"></ion-datetime>
+    </ion-item>
+    <ion-item class="return-flight">
+      <ion-icon name="calendar" item-left></ion-icon>
+      <ion-label>Check-out</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" min="{{cekout}}" max="{{max}}" pickerFormat="DD MM YYYY" [(ngModel)]="cekout"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="pin" item-left></ion-icon>
+      <ion-label>Guest</ion-label>
+      <ion-select [(ngModel)]="guest">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+      </ion-select>
+    </ion-item>  
+    <ion-item>
+      <ion-icon name="pin" item-left></ion-icon>
+      <ion-label>Room</ion-label>
+      <ion-select [(ngModel)]="rooms">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+      </ion-select>
+    </ion-item>  
+    
+  </ion-list>
+
+  <button (click)="findHotel()" ion-button block color="primary" icon-left>
+    <ion-icon name="search"></ion-icon>
+    In Progress...
+  </button>
+
+</ion-content>

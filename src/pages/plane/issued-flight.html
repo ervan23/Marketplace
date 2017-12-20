@@ -1,0 +1,145 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Issued Flight</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <!--<div style="margin-top: 15px; padding: 7px; color: #e53935;">
+        <small>{{price_message}}</small>
+    </div>-->
+    
+    <ion-card>
+        <ion-card-header>
+            Your Flight
+        </ion-card-header>
+        <ion-list>
+            <ion-item>
+                <img src="{{schedule.flight_schedule[0].airline_image}}" style="width: 40px !important; height: 35px !important;" item-left>
+                {{schedule.flight_schedule[0].airline_name}}
+                <p><small style="color: #787878">{{schedule.price_type}}</small></p>
+            </ion-item>
+            <ion-item>
+                <h2>Departure</h2>
+                <h3>{{schedule.flight_schedule[0].from}}&nbsp;{{schedule.flight_schedule[0].from_name}}</h3>
+                <p>{{schedule.flight_schedule[0].departure_date}}&nbsp;{{schedule.flight_schedule[0].departure_time}}</p>
+            </ion-item>
+            <ion-item>
+                <h2>Arrival</h2>
+                <h3>{{schedule.flight_schedule[schedule.flight_schedule.length-1].to}}&nbsp;{{schedule.flight_schedule[schedule.flight_schedule.length-1].to_name}}</h3>
+                <p>{{schedule.flight_schedule[schedule.flight_schedule.length-1].arrival_date}}&nbsp;{{schedule.flight_schedule[schedule.flight_schedule.length-1].arrival_time}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <div *ngIf="isReturn">
+        <ion-card>
+            <ion-card-header>
+                Your Return Flight
+            </ion-card-header>
+            <ion-list>
+                <ion-item>
+                    <img src="{{selected_airline.return.flight_schedule[0].airline_image}}" style="width: 40px !important; height: 35px !important;" item-left>
+                    {{selected_airline.return.flight_schedule[0].airline_name}}
+                    <p><small style="color: #787878">{{selected_airline.return.price_type}}</small></p>
+                </ion-item>
+                <ion-item>
+                    <h2>Departure</h2>
+                    <h3>{{selected_airline.return.flight_schedule[0].from}}&nbsp;{{selected_airline.return.flight_schedule[0].from_name}}</h3>
+                    <p>{{selected_airline.return.flight_schedule[0].departure_date}}&nbsp;{{selected_airline.return.flight_schedule[0].departure_time}}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Arrival</h2>
+                    <h3>{{selected_airline.return.flight_schedule[selected_airline.return.flight_schedule.length-1].to}}&nbsp;{{selected_airline.return.flight_schedule[selected_airline.return.flight_schedule.length-1].to_name}}</h3>
+                    <p>{{selected_airline.return.flight_schedule[selected_airline.return.flight_schedule.length-1].arrival_date}}&nbsp;{{selected_airline.return.flight_schedule[selected_airline.return.flight_schedule.length-1].arrival_time}}</p>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+    </div>
+
+    <ion-card>
+        <ion-card-header>
+            Contact
+        </ion-card-header>
+        <ion-list>
+            <ion-item>
+                {{extract_detail[0][0].contact.title}}. {{extract_detail[0][0].contact.first_name}} {{extract_detail[0][0].contact.last_name}}
+            </ion-item>
+            <ion-item>
+                {{extract_detail[0][0].contact.phone}}
+            </ion-item>
+            <ion-item>
+                {{extract_detail[0][0].contact.email}}
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Passenger(s)
+        </ion-card-header>
+        <ion-list>
+            <ion-item *ngFor="let v of extract_detail[0][0].pax.adult">
+                <p>{{v.title}}. {{v.first_name}} {{v.last_name}}<p>
+            </ion-item>
+            <div *ngIf="extract_detail[0][0].pax.child">
+                <ion-item *ngFor="let v of extract_detail[0][0].pax.child">
+                    <p>{{v.title}}. {{v.first_name}} {{v.last_name}}<p>
+                </ion-item>
+            </div>        
+            <div *ngIf="extract_detail[0][0].pax.infant">
+                <ion-item *ngFor="let v of extract_detail[0][0].pax.infant">
+                    <p>{{v.title}}. {{v.first_name}} {{v.last_name}}<p>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-card>
+
+    <ion-list>
+        <ion-item>
+            <h2><b>Price Detail</b></h2>
+        </ion-item>
+        <ion-item>
+            Adult Passenger(s)
+            <small style="float: right; text-align: right;">x {{ extract_detail[0][0].pax.adult.length }}</small>
+        </ion-item>
+        <ion-item *ngIf="extract_detail[0][0].pax.child">
+            Child Passenger(s)
+            <small style="float: right; text-align: right;">x {{ extract_detail[0][0].pax.child.length }}</small>
+        </ion-item>
+        <ion-item *ngIf="extract_detail[0][0].pax.infant">
+            Infant Passenger(s)
+            <small style="float: right; text-align: right;">x {{ extract_detail[0][0].pax.infant.length }}</small>
+        </ion-item>
+        <ion-item>
+            Sub-total
+            <small style="float: right; text-align: right;">Rp {{ konversiRupiah(old_total_price) }}</small>
+        </ion-item>        
+        <ion-item>
+            Fee Service
+            <small style="float: right; text-align: right;">Rp {{ konversiRupiah(fee_price) }}</small>
+        </ion-item>       
+        <ion-item>
+            Total Price
+            <small style="float: right; text-align: right;">Rp {{ konversiRupiah(old_total_price+fee_price) }}</small>
+        </ion-item>
+    </ion-list>    
+
+    <ion-list padding>        
+        <ion-item>
+            <div align="center">
+                <h3><b>Issued Price</b></h3>
+                <p style="color:#e53935;">
+                    <b>Rp {{ konversiRupiah(old_total_price+fee_price) }}</b>
+                </p>
+                <small>Termasuk PPN & airline fee</small>
+            </div>
+        </ion-item>  
+        <button (click)="issuedFlight()" ion-button block color="primary" icon-left>
+            <ion-icon name="checkmark"></ion-icon>
+            Issued
+        </button>
+    </ion-list>
+</ion-content>

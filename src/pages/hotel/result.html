@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Hotel Result</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-list *ngIf="listHotel">
+        <ion-item *ngFor="let h of listHotel.Hotel" (click)="detailHotel(h.$.HotelId, h.RoomCateg[0].$.Price)">
+            <ion-thumbnail item-left>
+            <img src="https://s28.postimg.org/nttenrynx/hotel.png">
+            </ion-thumbnail>
+            <h2>{{ h.$.HotelName }}</h2>
+            <h3>Price: ${{ h.RoomCateg[0].$.Price }} {{ h.$.Currency }}</h3>
+            <p>Rating: {{h.$.Rating}}</p>
+            <button (click)="detailHotel(h.$.HotelId, h.RoomCateg[0].$.Price)" ion-button clear item-right>View</button>
+        </ion-item>
+    </ion-list>
+</ion-content>

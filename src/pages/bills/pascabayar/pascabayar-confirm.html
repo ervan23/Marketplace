@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Pascabayar Confirmation</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios,android">Cancel</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            Customer Detail:
+        </ion-list-header>
+        <ion-item>
+            <h2>Customer ID</h2>
+            <p>{{id_customer}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>NO Invoice</h2>
+            <p>{{invoice}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Jenis</h2>
+            <p>{{jenis}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Nama</h2>
+            <p>{{nama}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Tagihan</h2>
+            <p>{{tagihan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Admin</h2>
+            <p>{{admin}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Total</h2>
+            <p>{{total}}</p>
+        </ion-item>
+        <button ion-button full (click)="confirm_pay()" color="primary" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Pay
+        </button>
+        <button ion-button full (click)="dismiss()" color="danger" icon-left>
+            <ion-icon name="card"></ion-icon>
+            Cancel
+        </button>
+    </ion-list>
+    
+</ion-content>

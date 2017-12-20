@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>TELCO Pascabayar</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="goHome()">
+        <span ion-text showWhen="ios,android">Home</span>
+        <ion-icon name="md-close" showWhen="windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-list-header>
+            Payment Detail:
+        </ion-list-header>
+        <ion-item>
+            <h2>NO ID</h2>
+            <p>{{id_cust}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Jenis</h2>
+            <p>{{jenis}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Nama</h2>
+            <p>{{customer_name}}</p>
+        </ion-item>        
+        <ion-item>
+            <h2>Ref Tagihan</h2>
+            <p>{{reftagihan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>No Ref</h2>
+            <p>{{noref}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Tagihan</h2>
+            <p>Rp. {{tagihan}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Admin</h2>
+            <p>{{adminca}}</p>
+        </ion-item>
+        <ion-item>
+            <h2>Total</h2>
+            <p>{{total}}</p>
+        </ion-item>
+        <ion-item>
+            <p>{{pesan}}</p>
+        </ion-item>
+        <button ion-button full (click)="goHome()" color="primary" icon-left>
+            <ion-icon name="home"></ion-icon>
+            Home
+        </button>
+    </ion-list>
+    
+</ion-content>

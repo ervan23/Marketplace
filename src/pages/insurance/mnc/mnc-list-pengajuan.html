@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>History Pembelian</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let v of listPengajuan">
+        <h2>Nama: {{ v.nama_lengkap }}</h2>
+        <h3>Tanggal: {{ dateFormat(v.tanggal) }}</h3>
+        <p>PIN: {{ v.voucher }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

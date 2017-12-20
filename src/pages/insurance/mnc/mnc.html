@@ -1,0 +1,116 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>MNC Life</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="openListPengajuan()"><ion-icon name="list-box"></ion-icon></button>
+    <!--<ion-fab-list side="top">
+      <button ion-fab (click)="openListPengajuan()"><ion-icon name="list-box"></ion-icon></button>
+      <button ion-fab (click)="openPengajuan()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab-list>-->
+  </ion-fab>
+  <ion-grid style="padding: 0px !important;">
+    <ion-row>
+      <ion-slides pager="true" loop="true" autoplay="3000">
+        <!--<ion-slide>
+          <img src="assets/images/mnc 1 small.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>-->
+        <ion-slide>
+          <img src="assets/images/mnc 2 small.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/mnc 3 small.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/images/mnc 4 small.jpg"  alt="dxplor" class="content-responsive" />
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+    <ion-card-header style="border-bottom: 1px solid #dedede;">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-10>
+            <h2><b>ASURANSI PRAKTIS<br>CUMA Rp. 55.000</b></h2>
+          </ion-col>
+          <ion-col col-2 style="margin-left: 35px;">
+            <button small (click)="openPengajuan()" ion-button color="primary">
+                Beli
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-card-header>
+    <ion-card-content style="padding-top: 15px;">
+      <h3><b>HARIO SIAGA</b></h3>
+      <p style="text-align: justify">
+        Hidup adalah sebuah pilihan. Ketika Anda memilih HARIO Siaga Anda sedang memastikan keuangan Anda dan keluarga terproteksi dengan baik.
+      </p>
+      <p style="text-align: justify">
+        HARIO Siaga memberikan proteksi terhadap risiko kecelakaan, dengan berbagai keunggulan:
+      </p>
+      <ul style="padding-left: 10px;">
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Tanpa pemeriksaan medis atau prosedur yang berbelit (guaranteed acceptance)
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Beragam nilai uang pertanggungan yang dapat disesuaikan dengan kebutuhan Anda
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Usia masuk 6 bulan hingga 74 tahun
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Masa asuransi 1 tahun
+        </li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header style="border-bottom: 1px solid #dedede;">
+      <h2><b>HARIO SIAGA</b></h2>
+    </ion-card-header>
+    <ion-card-content style="padding-top: 15px;">
+      <h3><b>Perlindungan Kecelakaan Paling Praktis</b></h3>
+      
+      <ul style="padding-left: 10px;">
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Harga Cuma Rp. 55.000 /tahun (1 Nama max 10 Polis)
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Manfaat Rp. 33 Juta/thn
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Beli Langsung Aktif
+        </li>
+      </ul>      
+
+      <ul style="padding-left: 10px;">
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Manfaat Santunan Duka Rp. 30.000.000
+        </li>
+        <li style="border-bottom: 1px solid #dedede; list-style-type: none; padding: 5px 0;">
+          Manfaat Perawatan RS Rp. 3.000.000
+        </li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>  
+    <ion-row>
+      <ion-col>
+        <button (click)="openLayananMnc()" ion-button full color="primary">
+            Layanan MNC
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
